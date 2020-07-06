@@ -1,12 +1,12 @@
 language: bash
 services: docker
 before_install:
-  - cd RestWithSpringBootUdemy/
+  - cd 
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
 before_deploy:
-  - echo "${Admin123}" | docker login --username "${gabrielwire}" --password-stdin
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 deploy:
   provider: script
   script:
